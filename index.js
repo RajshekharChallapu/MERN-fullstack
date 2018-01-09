@@ -6,7 +6,7 @@ const app = express();
 
 //router handler..express app
 app.get('/',(req,res)=>{
-res.send({hi:'there'});
+res.send({hi:'buddy'});
 });
 
         

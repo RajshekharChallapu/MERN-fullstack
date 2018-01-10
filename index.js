@@ -11,6 +11,7 @@ mongoose.connect(keys.mongoURI);
 //listening requests..btw express and node
 const app = express();
 
+//middlewares
 app.use(cookieSession({
 maxAge:30*24*60*60*1000,
 keys:[keys.cookieKey]

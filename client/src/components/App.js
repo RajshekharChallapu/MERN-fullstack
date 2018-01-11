@@ -1,7 +1,6 @@
 import React from 'react';
 //react router DOM..components
 import {BrowserRouter, Route} from 'react-router-dom';
-
 import Header from './Header';
 //dummy componenets
 
@@ -11,7 +10,7 @@ const Landing = () => <h2>Landing</h2>;
 
 const App = () => {
     return (
-        <div>
+        <div className="container">
             <BrowserRouter>
                 <div>
                     <Header/>

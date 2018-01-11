@@ -9,10 +9,12 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">hehe</h1>
+
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+<a href = "/auth/google" > Sign In with google </a>
       </div>
     );
   }

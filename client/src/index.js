@@ -1,4 +1,4 @@
-
+//UI developed using ES2015 modules.
 import 'materialize-css/dist/css/materialize.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';

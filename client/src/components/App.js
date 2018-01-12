@@ -6,10 +6,11 @@ import * as actions from '../actions';
 
 
 import Header from './Header';
-//dummy componenets
+import Landing from './Landing';
+//dummy components
 const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>SurveyNewr</h2>;
-const Landing = () => <h2>Landing</h2>;
+
 
 //class component
 class App extends Component{

@@ -1,44 +1,48 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 //class base components
 class Header extends Component {
-    renderContent(){
-        switch(this.props.auth){
+    renderContent() {
+        switch (this.props.auth) {
             case null:
-             return 'Still deciding';
-
+                return;
             case false:
-            return 'Am logged out';
-
+                return <li>
+                    <a href="/auth/google">Login with Google</a>
+                       </li>;
             default:
-            return 'loggedIn';
+                return <li>
+<a href= "/api/logout">Logout</a>
+                 </li>;
         }
     }
 
     render() {
-        
         return (
             <nav>
-           {/*  whenver working with react component we don't use class as property dat as showed in materialze docs..we use `className` */}
-                <div className="nav-wrapper">
-                    <a className="left brand-logo">
-                        Omnv
-                    </a>
-                    <ul className="right">
-                       {this.renderContent()}
-                    </ul>
-                </div>
-            </nav>
+             <div className = "nav-wrapper"> 
+             <Link to={this.props.auth ? '/surveys':'/'}
+              className="left brand-logo"
+              >
+              Omnv
+              </Link>
+
+             <ul className = "right"> 
+                {this.renderContent()}
+             
+            </ul>
+         </div> 
+        </nav>
         );
     }
 }
 
-function  mapStateToProps({auth})  {
+function mapStateToProps({auth}) {
     return {auth};
-        
-    }
 
+}
 
 // can be accessed from other files within the project
-export default connect(mapStateToProps) (Header);
+export default connect(mapStateToProps)(Header);

@@ -1,9 +1,23 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 //class base components
 class Header extends Component {
+    renderContent(){
+        switch(this.props.auth){
+            case null:
+             return 'Still deciding';
+
+            case false:
+            return 'Am logged out';
+
+            default:
+            return 'loggedIn';
+        }
+    }
 
     render() {
+        
         return (
             <nav>
            {/*  whenver working with react component we don't use class as property dat as showed in materialze docs..we use `className` */}
@@ -12,9 +26,7 @@ class Header extends Component {
                         Omnv
                     </a>
                     <ul className="right">
-                        <li>
-                            <a>Login with Google</a>
-                        </li>
+                       {this.renderContent()}
                     </ul>
                 </div>
             </nav>
@@ -22,5 +34,11 @@ class Header extends Component {
     }
 }
 
+function  mapStateToProps({auth})  {
+    return {auth};
+        
+    }
+
+
 // can be accessed from other files within the project
-export default Header;
+export default connect(mapStateToProps) (Header);

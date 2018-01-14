@@ -8,6 +8,7 @@ constructor({subject, recipients},content){
 super();
 
 //properties
+this.sgApi =sendgrid(keys.sendGridkey);
 this.from_email= new helper.Email('no-reply@YES-V.com');
 this.subject=subjet;
 this.body= new helper.Content('text/html', content);
@@ -40,6 +41,18 @@ addRecipients(){
     this.addPersonalization(personalize);
 
 }
+async send(){
+    const request =this.sgApi.emptyRequest({
+     method: 'POST',
+     path:'/v3/mail/send',
+     body:this.toJSON()
+    });
+
+    const response=this.sgApi.API(request);
+    return response;
+
+}
+
 }
 
 module.exports =Mailer;

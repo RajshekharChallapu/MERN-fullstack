@@ -3,11 +3,12 @@
 
 import React from 'react';
 
-export default({input})=>{
+export default({input, label})=>{
 
     /*we can use above code instead of console.log(props.input); */
 return(
     <div>
+    <label>{label}</label>
     <input {...input} /> {/* onBlur={input.onBlur} onChange={input.onChange} */}
     </div>
 );

@@ -16,7 +16,8 @@ class SurveyForm extends Component {
     renderFields() {
         return _.map(FIELDS, ({label, name}) =>{
             return (
-            <Field key={name} component={SurveyField} type="text"  label={label}  name={name}/>
+            <Field key={name} component={SurveyField} type="text"  label={label}  name={name}
+            />
         );
         });
 
@@ -42,5 +43,11 @@ class SurveyForm extends Component {
     }
 
 }
-
-export default reduxForm({form: 'surveyForm'})(SurveyForm);
+function validate(values) {
+    const errors = {};
+    if (!values.title) {
+        errors.title = 'You must provide a title';
+    }
+    return errors;
+}
+export default reduxForm({validate, form: 'surveyForm'})(SurveyForm);

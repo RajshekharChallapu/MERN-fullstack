@@ -9,7 +9,7 @@ super();
 
 //properties
 this.sgApi =sendgrid(keys.sendGridkey);
-this.from_email= new helper.Email('no-reply@YES-V.com');
+this.from_email= new helper.Email('no-reply@YESV.com');
 this.subject=subjet;
 this.body= new helper.Content('text/html', content);
 this.recipients=  this.formatAddresses(recipients);

@@ -29,12 +29,13 @@
     "localtunnel": "^1.8.3",
     "lodash": "^4.17.4",
     "mongoose": "^4.13.9",
-    "webhook": "forever sendgrid_webhook.js",
     "nodemon": "^1.14.10",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^3.0.1",
     "sendgrid": "^5.2.3",
-    "stripe": "^5.4.0"
+    "stripe": "^5.4.0",
+    "webhook": "forever sendgrid_webhook.js"
   },
   "devDependencies": {
     "forever": "^0.15.3"

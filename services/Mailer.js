@@ -19,10 +19,9 @@ this.addClickTracking();
 this.addRecipients();
 }
 
-formatAddresses(recipients){
-
-    return recipients.map(({ email }) =>{
-return new helper.Email(email);
+formatAddresses(recipients) {
+    return recipients.map(recipient => {
+        return new helper.Email(recipient.email)
     });
 }
 addClickTracking(){
@@ -48,7 +47,9 @@ async send(){
      body:this.toJSON()
     });
 
-    const response=await this.sgApi.API(request);
+const response = await this
+    .sgApi
+    .API(request);
     return response;
 
 }

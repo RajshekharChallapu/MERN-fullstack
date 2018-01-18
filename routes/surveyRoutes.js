@@ -25,9 +25,19 @@ const events= _.chain(req.body)
     })
     .compact()
     .uniqBy('email', 'surveyId')
+    .each(({surveyId, email, choice}) => {
+        Survey.updateOne({
+            _id: surveyId,
+            recipients:{
+                $elemMatch:{email: email, responded:false}
+            }
+        },{
+            $inc: {[choice]:1},
+            $set:{'recipients.$responded': true}
+        
+        }).exec();
+    })
     .vaule();
-
-    console.log(events);
     res.send({});
 });
     app.post('/api/surveys',requireLogin, requireCredits, async (req, res) =>{

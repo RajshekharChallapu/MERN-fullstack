@@ -17,7 +17,6 @@ mongoose.connect(keys.mongoURI);
 
 //listening requests..btw express and node
 const app = express();
-
 app.use(bodyParser.json());
 
 //middlewares

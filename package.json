@@ -35,7 +35,7 @@
     "path-parser": "^3.0.1",
     "sendgrid": "^5.2.3",
     "stripe": "^5.4.0",
-    "webhook": "forever sendgrid_webhook.js"
+   
   },
   "devDependencies": {
     "forever": "^0.15.3"

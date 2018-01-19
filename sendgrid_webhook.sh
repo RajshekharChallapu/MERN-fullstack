@@ -1,5 +1,14 @@
-var localtunnel = require('localtunnel');
-localtunnel(5000, {
-subdomain : <'crvmovkdhk'>
-        }, function(err, tunnel) {console.log('LT running')
+#!/bin/bash
+# make sure you have execute permissions:
+# cd /path/to/project
+# chmod +x ./sendgrid_webhook.sh
+# to run, type ./sendgrid_webhook.sh in the terminal
+
+function localtunnel {
+lt -s crvmovkdhk --port 5000
 }
+
+until localtunnel; do
+echo "localtunnel server crashed"
+sleep 2
+done

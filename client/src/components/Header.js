@@ -25,11 +25,13 @@ class Header extends Component {
     render() {
         return (
             <nav>
-             <div className = "nav-wrapper"> 
+             <div className = "nav-wrapper #1a237e indigo darken-4"> 
+          {/*    <div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div> */}
+            
              <Link to={this.props.auth ? '/surveys':'/'}
               className="left brand-logo"
               >
-              YES-V
+              YUNO
               </Link>
 
              <ul className = "right"> 

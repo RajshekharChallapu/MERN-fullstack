@@ -4,7 +4,7 @@ const Landing = () =>{
 return (
 <div style={{textAlign:'center'}}>
 <h1>
-YES-V
+YUNO
 </h1>
 Collect feedback from users
 </div>

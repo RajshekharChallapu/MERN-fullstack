@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose =require('mongoose');
 const https = require('https');
-
 const cookieSession = require('cookie-session');
 const passport =require('passport');
 const bodyParser =require('body-parser');
@@ -12,7 +11,7 @@ require('./services/passport');
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI, {useMongoClient: true});
 
 
 //listening requests..btw express and node
@@ -21,7 +20,7 @@ app.use(bodyParser.json());
 
 //middlewares
 app.use(cookieSession({
-maxAge:30*24*60*60*1000,
+maxAge:30*24*60*60*6000,
 keys:[keys.cookieKey]
 })
 );

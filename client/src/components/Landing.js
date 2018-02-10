@@ -1,15 +1,17 @@
 import React from 'react';
 
-const Landing = () =>{
-return (
-<div style={{textAlign:'center'}}>
+const Landing = () => {
+    return (
+        <div style={{
+            textAlign: 'center'
+        }}>
 
-<h1>
-YUNO
-</h1>
-Collect feedback from users
+            <h1>
+                YUNO
+            </h1>
+            Collect feedback from users
 
-</div>
-);
+        </div>
+    );
 };
 export default Landing;

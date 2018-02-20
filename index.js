@@ -11,7 +11,12 @@ require('./services/passport');
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI, {useMongoClient: true});
+const options={
+    useMongoClient:true,
+    reconnectTries:Number.MAX_VALUE,
+    reconnectInterval: 500
+};
+mongoose.connect(keys.mongoURI);
 
 
 //listening requests..btw express and node
